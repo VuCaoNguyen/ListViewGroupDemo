@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewGroup.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="List Countries" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+       
+        <ListView x:Name="listcity"  SeparatorColor="DarkCyan"
+                  GroupDisplayBinding="{Binding CountryName}"
+                  GroupShortNameBinding="{Binding CountryName}"
+                  IsGroupingEnabled="True"
+                  RowHeight="100"
+                  ItemSelected="listcity_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding image}" Grid.Row="0" Grid.Column="0" Aspect="AspectFill" Grid.RowSpan="2"/>
+                            <Label Text="{Binding name}" Grid.Row="0" Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   FontSize="Large"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+            <ListView.Header>
+                <StackLayout>
+                    <Label Text="{Binding CountryName}" FontSize="32"/>
+                </StackLayout>
+            </ListView.Header>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

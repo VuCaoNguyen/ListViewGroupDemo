@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewGroup.DetailPage"
+             Title="Details">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" >
+                <Setter Property="FontSize">20</Setter>
+                <Setter Property="Padding">10</Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="imageDetail" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+            <Label Text="Country" Grid.Row="1" Grid.Column="0"/>
+            <Label Text="City" Grid.Row="2" Grid.Column="0"/>
+            <Label x:Name="coutry" FontSize="Large" TextColor="Green" Grid.Row="1" Grid.Column="1"/>
+            <Label x:Name="city" FontSize="Large" TextColor="Blue" Grid.Row="2" Grid.Column="1"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
